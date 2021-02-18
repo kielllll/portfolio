@@ -1,0 +1,100 @@
+/* Set variables for reusability */
+:root {
+  --oddSection: #e1c699;
+  --evenSection: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent sizing/positioning collisions
+*  Set secondary text as Open Sans
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+#brand {
+  font-family: "Roboto", sans-serif;
+}
+
+#nav-color {
+  background-color: var(--oddSection);
+}
+
+#header {
+  height: 70vh;
+  background-color: var(--oddSection);
+}
+
+#header-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+
+#header-container > .row {
+  width: 100%;
+}
+
+#caption {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+#profile-image {
+  background-image: url("../images/me.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40vh;
+  width: 40vh;
+  border-radius: 1000px;
+  border: solid 3px #fff;
+  margin: auto;
+}
+
+#about {
+  background-color: var(--evenSection);
+  height: 50vh;
+}
+
+#projects {
+  background-color: var(--oddSection);
+  height: 60vh;
+}
+
+#thesis {
+  background-image: url("../images/thesis.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 30vh;
+  border: solid 3px #fff;
+}
+
+.tech-stack {
+  display: flex;
+  justify-content: center;
+}
+
+#flask {
+  background-color: lightgrey;
+  color: #fff;
+}
+
+#nuxtjs {
+  background-color: lightgreen;
+  color: #000;
+}
+
+#contact {
+  background-color: var(--evenSection);
+  height: 50vh;
+}
