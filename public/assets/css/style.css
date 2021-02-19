@@ -2,6 +2,9 @@
 :root {
   --oddSection: #e1c699;
   --evenSection: #fff;
+  --timeline-circle: #c23941;
+  --timeline-card: #314e52;
+  --time: #303249;
 }
 
 html {
@@ -18,6 +21,7 @@ html {
   font-family: "Open Sans", sans-serif;
 }
 
+/* Header Section */
 #brand {
   font-family: "Roboto", sans-serif;
 }
@@ -60,11 +64,97 @@ html {
   margin: auto;
 }
 
+/* About Section */
 #about {
   background-color: var(--evenSection);
-  height: 50vh;
+  height: 150vh;
+  display: inline;
 }
 
+.timeline {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  height: 100%;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background-color: #c5c5c5;
+}
+
+.timeline ul {
+  margin: 0;
+  padding: 0;
+}
+
+.timeline ul li {
+  list-style: none;
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+}
+
+.timeline ul li:nth-child(odd) {
+  display: flex;
+  /* float: left; */
+  text-align: right;
+  flex-wrap: wrap;
+  /* clear: both; */
+}
+
+.timeline ul li:nth-child(odd)::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  right: -11px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--timeline-circle);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(233, 33, 99, 0.2);
+}
+
+.timeline ul li:nth-child(even) {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  /* float: right; */
+  flex-wrap: wrap;
+  text-align: left;
+  left: 50%;
+  /* clear: both; */
+}
+
+.timeline ul li:nth-child(even)::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: -9px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--timeline-circle);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(233, 33, 99, 0.2);
+}
+
+.time {
+  background-color: var(--time);
+  color: #fff;
+  border-radius: 18px;
+  margin-top: 5px;
+  padding: 8px 16px;
+}
+
+.content {
+  background-color: var(--timeline-card);
+}
+
+/* Projects Section */
 #projects {
   background-color: var(--oddSection);
   height: 60vh;
@@ -85,8 +175,9 @@ html {
 }
 
 #flask {
-  background-color: lightgrey;
+  background-color: gray;
   color: #fff;
+  width: fit-content;
 }
 
 #nuxtjs {
@@ -95,15 +186,22 @@ html {
   width: fit-content;
 }
 
+/* Contact Section */
 #contact {
   background-color: var(--evenSection);
   height: 50vh;
+  display: inline;
 }
 
 #about > .row,
 #projects > .row,
 #contact > .row {
-  margin-top: 20px;
+  margin: 20px auto;
+}
+
+#about > h2,
+#contact > h2 {
+  margin-left: 20px;
 }
 
 #form {
@@ -119,4 +217,13 @@ footer {
 #button {
   position: absolute;
   right: 0;
+}
+
+/* Additional Responsiveness */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #header,
+  #projects {
+    height: 80vh;
+  }
 }
