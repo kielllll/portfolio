@@ -209,8 +209,7 @@ footer {
   }
 
   /* Override to not set a margin to the 1st content */
-  .timeline ul li:first-child::before,
-  .timeline ul li:first-child .content {
+  .timeline ul li:first-child::before {
     margin-top: 0;
   }
 }
@@ -273,7 +272,7 @@ footer {
 }
 
 /* Much bigger devices ;) */
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1500px) {
   #profile-image {
     height: 60vh;
     width: 60vh;
