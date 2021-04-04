@@ -1,5 +1,7 @@
 /* Set variables for reusability */
 :root {
+  --nav: #314e52;
+  --nav-text: #fff;
   --oddSection: #e1c699;
   --evenSection: #fff;
   --timeline-circle: #c23941;
@@ -28,8 +30,35 @@ html {
 }
 
 #nav-color {
-  background-color: var(--oddSection);
+  background-color: var(--nav);
 }
+
+/* CSS Bootstrap Override */
+.navbar-light .navbar-brand {
+  color: var(--nav-text);
+}
+
+.navbar-light .navbar-toggler {
+  color: var(--nav-text);
+}
+
+.navbar-toggler,
+.collapsed,
+.navbar-toggler-icon {
+  color: var(--nav-text);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--nav-text);
+}
+
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show > .nav-link {
+  color: var(--nav-text);
+}
+/* End of Override */
 
 #header {
   height: 70vh;
@@ -137,28 +166,34 @@ html {
 }
 
 #about > .row,
-#projects > .row,
-#contact > .row {
+#projects > .row {
   margin: 20px auto;
-}
-
-#about > h2,
-#contact > h2 {
-  margin-left: 20px;
 }
 
 #projects > h2 {
   padding-top: 20px;
 }
 
+#about > h2,
+#contact > h2,
+#projects > h2 {
+  text-align: center;
+}
+
 #form {
   height: 50%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 footer {
   bottom: 0;
   text-align: center;
   margin-top: 20px;
+}
+
+footer > .lead {
+  font-size: 0.8rem;
 }
 
 #button {
@@ -173,6 +208,10 @@ footer {
     height: 80vh;
   }
 
+  #about > h2 {
+    margin-top: -35px;
+  }
+
   #projects {
     height: 70vh;
   }
@@ -182,6 +221,8 @@ footer {
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 
   .time {
@@ -268,6 +309,15 @@ footer {
     border-radius: 18px;
     margin-top: 5px;
     padding: 8px 16px;
+  }
+
+  /* Override to not set a margin to the 1st content */
+  .timeline ul li:first-child::before {
+    margin-top: -25px;
+  }
+
+  .timeline ul li:first-child {
+    padding-top: 0;
   }
 }
 
